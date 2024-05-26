@@ -1,0 +1,21 @@
+.auth-main {
+  padding-top: 20px;
+  width: 80%;
+  margin: auto;
+  h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+form {
+  width: 50%;
+  flex-direction: column;
+  display: flex;
+  margin-top: 50px;
+}
+@media (max-width: 600px) {
+  form {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

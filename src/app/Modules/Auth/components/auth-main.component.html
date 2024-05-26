@@ -1,0 +1,48 @@
+<div class="auth-main">
+  <h3>Welcome to
+    <ng-container *ngIf="activeTabIndex === 0">Sign In</ng-container>
+    <ng-container *ngIf="activeTabIndex === 1">Sign Up</ng-container>
+    page
+  </h3>
+  <div class="forms">
+    <mat-tab-group (selectedTabChange)="tabChange($event)">
+      <mat-tab label="Sign In">
+        <form [formGroup]="loginForm" (submit)="submit()">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> E-mail
+            </mat-label>
+            <input matInput formControlName="email" required>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline" required>
+            <mat-label> Password
+            </mat-label>
+            <input matInput formControlName="password" type="password">
+          </mat-form-field>
+          <span class="incorrect" *ngIf="loginNotSuccess">Email or Password is incorrect</span>
+          <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Log In</button>
+        </form>
+      </mat-tab>
+      <mat-tab label="Sign Up">
+        <form [formGroup]="registerForm" (submit)="register()">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Username
+            </mat-label>
+            <input matInput formControlName="username" required>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> E-mail
+            </mat-label>
+            <input matInput formControlName="email" required>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline" required>
+            <mat-label> Password
+            </mat-label>
+            <input matInput formControlName="password" type="password">
+          </mat-form-field>
+          <span class="incorrect" *ngIf="registerNotSuccess">User with this email or username already exist</span>
+          <button mat-raised-button color="primary" [disabled]="registerForm.invalid">Register</button>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

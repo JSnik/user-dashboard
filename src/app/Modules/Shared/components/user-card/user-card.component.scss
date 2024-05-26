@@ -1,0 +1,13 @@
+.flex-direction {
+  flex-direction: column;
+  display: flex;
+  width: fit-content;
+}
+.right-section {
+  margin-left: 15px;
+}
+@media (max-width: 600px) {
+  .right-section {
+    margin-left: 0px;
+  }
+}

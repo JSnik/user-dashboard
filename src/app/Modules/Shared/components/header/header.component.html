@@ -1,0 +1,10 @@
+<mat-toolbar color="primary" class="aligner">
+  <span class="logo" routerLink="./users">User Management Dashboard</span>
+  <span class="logo-small" routerLink="./users">U.M.D</span>
+  <span class="spacer"></span>
+  <div class="d-flex">
+    <button mat-raised-button color="accent" routerLink="./users">Home</button>
+    <button mat-raised-button color="accent" class="margin-btn" routerLink="./login" *ngIf="!logStatement">Log in</button>
+    <button mat-raised-button color="accent" class="margin-btn" routerLink="./login" *ngIf="logStatement" (click)="clearStorage()">Log out</button>
+  </div>
+</mat-toolbar>
