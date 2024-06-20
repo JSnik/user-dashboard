@@ -15,6 +15,62 @@
 .demo-row-is-clicked {
   font-weight: bold;
 }
+.vacancy-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 500px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.see {
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: cornflowerblue;
+  color: white;
+  border-radius: 5px;
+  padding: 0px 15px;
+}
+.see-more {
+  display: flex;
+  justify-content: center;
+}
+.title {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.detail-item {
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+  color: #555;
+}
+
+.value {
+  color: #333;
+}
+.responsive-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #f8f9fa;
+  padding-top: 40px;
+}
 @media (max-width: 600px) {
   .responsive-block {
     width: 100%;

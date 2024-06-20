@@ -1,27 +1,53 @@
 <div class="responsive-block">
-  <table mat-table [dataSource]="userData" class="mat-elevation-z8 demo-table">
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+  <div class="vacancy-card" *ngFor="let item of userData; let i = index;">
+    <ng-container *ngIf="i === 0">
+      <h2 class="title">C# Developer</h2>
     </ng-container>
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <ng-container *ngIf="i === 1">
+      <h2 class="title">C++ Developer</h2>
     </ng-container>
-    <ng-container matColumnDef="username">
-      <th mat-header-cell *matHeaderCellDef> Username </th>
-      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    <ng-container *ngIf="i === 2">
+      <h2 class="title">Java Developer</h2>
     </ng-container>
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef> Email </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    <ng-container *ngIf="i === 3">
+      <h2 class="title">3D Designer</h2>
     </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr
-      mat-row
-      (click)="clickedRows.add(row); showDetail(row)"
-      [class.demo-row-is-clicked]="clickedRows.has(row)"
-      *matRowDef="let row; columns: displayedColumns;"
-    ></tr>
-  </table>
+    <ng-container *ngIf="i === 4">
+      <h2 class="title">React Developer</h2>
+    </ng-container>
+    <ng-container *ngIf="i > 4">
+      <h2 class="title">UI/UX Designer</h2>
+    </ng-container>
+    <div class="details">
+      <div class="detail-item">
+        <span class="label">Name: </span>
+        <span class="value">{{item?.name}}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Surname: </span>
+        <span class="value">{{item?.username}}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Email: </span>
+        <span class="value">{{item?.email}}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Phone: </span>
+        <span class="value">{{item?.phone}}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Website: </span>
+        <span class="value">{{item?.website}}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Location: </span>
+        <span class="value">{{item?.address?.city}}</span>
+      </div>
+      <div class="see-more">
+        <div class="see">
+          <span>See Details</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
